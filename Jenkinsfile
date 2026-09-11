@@ -9,7 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                sh 'git status'
+                bat 'git status'
             }
         }
         stage('Test') {
