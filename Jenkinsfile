@@ -1,26 +1,21 @@
 pipeline {
-    agent any
+    agent any 
+
     stages {
-        stage('Checkout') {
+        stage('Build') { 
             steps {
-                echo 'Checking out local codebase...'
+                echo 'Building application...'
             }
         }
-        stage('Build') {
+        stage('Test') { 
             steps {
-                echo 'Building the project...'
-                bat 'git status'
+                echo 'Running unit tests...'
             }
         }
-        stage('Test') {
+        stage('Deploy') { 
             steps {
-                echo 'Running automated tests...'
+                echo 'Deploying application...'
             }
-        }
-    }
-    post {
-        always {
-            echo 'Pipeline execution finished!'
         }
     }
 }
